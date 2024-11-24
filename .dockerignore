@@ -1,0 +1,56 @@
+# Rust specific
+target/
+**/*.rs.bk
+*.pdb
+
+# Development files
+.git/
+.gitignore
+.github/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+*.md
+
+# Debug files
+debug/
+*.log
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Dependencies that will be rebuilt
+Cargo.lock
+
+# Test files
+tests/
+benches/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Backup files
+**/*~
+**/#*#
+**/.#*
+
+# IDE specific
+*.iml
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project

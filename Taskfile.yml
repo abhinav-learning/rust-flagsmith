@@ -1,0 +1,24 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  up:
+    cmds:
+      - docker compose up --build -d
+    silent: true
+  down:
+    cmds:
+      - docker compose down
+  local:
+    cmds:
+      - cargo run
+  db:
+    cmds:
+      - docker build -t rust-flagsmith .
+  dr:
+    cmds:
+      - docker run -p 8080:8080 --env-file ./.env rust-flagsmith
