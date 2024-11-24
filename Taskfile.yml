@@ -15,7 +15,7 @@ tasks:
       - docker compose down
   local:
     cmds:
-      - cargo run
+      - cargo watch -x run
   db:
     cmds:
       - docker build -t rust-flagsmith .
