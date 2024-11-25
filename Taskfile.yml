@@ -13,6 +13,9 @@ tasks:
   local:
     cmds:
       - cargo watch -x run -w src
+  build:
+    cmds:
+      - cargo build
   db:
     cmds:
       - docker build -t rust-flagsmith .
