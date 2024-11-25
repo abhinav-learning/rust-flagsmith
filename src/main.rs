@@ -8,7 +8,7 @@ use std::env;
 use rocket::serde::json::Json;
 use serde::Serialize;
 
-#[derive(Serialize)] // Mark your struct with Serialize
+#[derive(Serialize)]
 struct APIResponse {
     message: String,
 }
@@ -21,13 +21,17 @@ fn index() -> Json<APIResponse> {
 }
 
 #[get("/ping")]
-fn ping() -> &'static str {
-    "Hello, world! This is ping"
+fn ping() -> Json<APIResponse> {
+    Json(APIResponse {
+        message: "Hello, world! This is ping".to_string(),
+    })
 }
 
 #[get("/beta")]
-fn beta() -> &'static str {
-    "Hello, world! This is beta"
+fn beta() -> Json<APIResponse> {
+    Json(APIResponse {
+        message: "Hello, world! This is beta".to_string(),
+    })
 }
 
 // Configuration struct to hold env variables
