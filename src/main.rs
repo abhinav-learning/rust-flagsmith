@@ -5,6 +5,7 @@ extern crate dotenv;
 use dotenv::dotenv;
 use rocket::custom;
 
+mod controller;
 mod env_config;
 mod routes;
 

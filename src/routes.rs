@@ -1,4 +1,4 @@
-use controller::get_redis_client;
+use crate::controller::get_redis_client;
 use rocket::serde::json::Json;
 use serde::Serialize;
 
@@ -10,6 +10,7 @@ pub struct APIResponse {
 #[get("/")]
 pub fn index() -> Json<APIResponse> {
     let con = get_redis_client();
+    println!("Connection value is {}", con);
     Json(APIResponse {
         message: "Hello, world! This is rocket".to_string(),
     })
