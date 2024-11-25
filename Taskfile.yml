@@ -16,6 +16,16 @@ tasks:
   build:
     cmds:
       - cargo build
+  lint:
+    cmds:
+      - cargo clippy
+    deps:
+      - build
+  lint-fix:
+    cmds:
+      - cargo clippy --fix
+    deps:
+      - build
   db:
     cmds:
       - docker build -t rust-flagsmith .
