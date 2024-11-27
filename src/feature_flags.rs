@@ -11,5 +11,5 @@ pub fn fetch_feature_flag(flag_name: &str) -> Flag {
         options,
     );
     let flags = flagsmith.get_environment_flags().unwrap();
-    return flags.get_flag(flag_name).unwrap_or_default();
+    flags.get_flag(flag_name).unwrap_or_default()
 }
