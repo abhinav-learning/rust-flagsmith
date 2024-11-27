@@ -19,7 +19,10 @@ impl EnvConfig {
                 .unwrap_or_else(|_| "8080".to_string())
                 .parse()
                 .unwrap_or(8080),
-            redis_url: env::var("REDIS_URL").unwrap_or_else(|_| "localhost:6379".to_string()),
+            redis_url: format!(
+                "redis://{}/",
+                env::var("REDIS_URL").unwrap_or_else(|_| "localhost:6379".to_string())
+            ),
             // fsk: env::var("FLAGSMITH_ENVIRONMENT_KEY")
             //     .unwrap_or_else(|_| "FLAGSMITH_ENVIRONMENT_KEY".to_string()),
         }
