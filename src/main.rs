@@ -7,6 +7,7 @@ use rocket::custom;
 
 mod controller;
 mod env_config;
+mod feature_flags;
 mod routes;
 
 #[rocket::main]
