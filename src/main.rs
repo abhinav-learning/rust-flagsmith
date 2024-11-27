@@ -14,6 +14,8 @@ async fn main() {
     dotenv().ok();
     // Load configuration
     let env_config = env_config::EnvConfig::from_env();
+    // Connecting to Redis Server
+    println!("Redis Server Endpoint is {}", env_config.redis_url);
     // Building Rocket Server Config
     let config = custom(rocket::Config {
         port: env_config.port, // Reading PORT from Env variable
