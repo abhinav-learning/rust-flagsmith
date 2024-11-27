@@ -14,9 +14,9 @@ pub fn index() -> Json<APIResponse> {
     let env: EnvConfig = EnvConfig::from_env();
     let rconn = create_client(env.redis_url.as_str()).unwrap();
     if rconn.client.is_open() {
-        println!("The Redis Connection is Established");
+        info!("The Redis Connection is Established");
     } else {
-        println!("Connection is not established,")
+        error!("Connection is not established,")
     }
     Json(APIResponse {
         message: "Hello, world! This is rocket".to_string(),
