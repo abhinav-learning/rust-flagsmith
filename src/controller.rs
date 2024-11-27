@@ -7,7 +7,7 @@ pub trait RedisClientImpl {
 }
 
 pub struct RedisClient {
-    client: Client,
+    pub client: Client,
 }
 
 impl RedisClientImpl for RedisClient {
