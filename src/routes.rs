@@ -2,10 +2,7 @@ use redis::ConnectionLike;
 use rocket::serde::json::Json;
 use serde::Serialize;
 
-use crate::{
-    controller::create_client,
-    env_config::EnvConfig,
-};
+use crate::{controller::create_client, env_config::EnvConfig};
 
 #[derive(Serialize)]
 pub struct APIResponse {
@@ -15,8 +12,8 @@ pub struct APIResponse {
 #[get("/")]
 pub fn index() -> Json<APIResponse> {
     let env: EnvConfig = EnvConfig::from_env();
-    let mut rconn = create_client(env.redis_url.as_str()).unwrap();
-    if rconn.client.check_connection() {
+    let rconn = create_client(env.redis_url.as_str()).unwrap();
+    if rconn.client.is_open() {
         println!("The Redis Connection is Established");
     } else {
         println!("Connection is not established,")
