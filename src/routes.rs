@@ -1,9 +1,9 @@
-use redis::{ConnectionLike, RedisError};
+use redis::ConnectionLike;
 use rocket::serde::json::Json;
 use serde::Serialize;
 
 use crate::{
-    controller::{create_client, RedisClient},
+    controller::create_client,
     env_config::EnvConfig,
 };
 
