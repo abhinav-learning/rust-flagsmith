@@ -9,6 +9,7 @@ mod controller;
 mod env_config;
 mod feature_flags;
 mod routes;
+mod utils;
 
 #[rocket::main]
 async fn main() {
